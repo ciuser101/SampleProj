@@ -199,4 +199,17 @@ public class OwnerTests {
         assertEquals(fido, owner.getPet("Fido2"));
         assertEquals(fido, owner.getPet("Fido2"));
     }
+	
+	@Test
+    @Transactional
+    public void testHasPet72() {
+        Owner owner = new Owner();
+        Pet fido = new Pet();
+        fido.setName("Fido2");
+        assertNull(owner.getPet("Fido2"));
+        assertNull(owner.getPet("Fido2"));
+        owner.addPet(fido);
+        assertEquals(fido, owner.getPet("Fido2"));
+        assertEquals(fido, owner.getPet("Fido2"));
+    }
 }
